@@ -5,7 +5,7 @@ Basic C++ timer (windows x64 dynamic library) done in Test-driven development
 
 ## `setTimeout(EventCallback callback, std::chrono::seconds timeout)`
 
-```c+ +
+```c++
 Timer timer = Timer();
 timer.setTimeout([&](std::string_view str = "Cookoo!") -> bool {
     std::cout << "Tick Tock .. After 1s I'll print: " << str
@@ -16,7 +16,7 @@ timer.setTimeout([&](std::string_view str = "Cookoo!") -> bool {
 
 ## `setInterval(EventCallback callback, std::chrono::seconds interval);`
 
-```c+ +
+```c++
 Timer timer = Timer();
 timer.setInterval([&]() {
     std::cout << "Tick Tock .. After each 1s ...\n";
@@ -25,7 +25,7 @@ timer.setInterval([&]() {
 
 ## Sample Program
 
-```c+ +
+```c++
 #include <iostream>
 #include "Timer.h"
 
@@ -50,7 +50,7 @@ int main()
 
 ** Output**
 
-```
+```console
 Tick Tock ..After 1s I'll do something & stop
 Tick Tock ..After each 1s ...
 Tick Tock ..After each 1s ...
