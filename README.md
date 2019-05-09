@@ -68,6 +68,7 @@ Open solution "Timer.sln" with the Visual Studio 2019 and build
 ### How to use it?
 
 ```
-Just copy the "Timer.dll" library to your bin directory and include "Timer.h" to your source file.
-That's it!
+1. Copy the "Timer.dll" library to your bin directory.
+2. Include "Timer.h" to your source file.
+3. Add "Timer.lib" to your project configuration: Linker->Input->Additional Dependencies.
 ```
