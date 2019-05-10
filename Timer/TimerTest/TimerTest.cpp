@@ -2,7 +2,7 @@
 
 #include "TimerTestFixture.h"
 
-TEST(IsActiveTest, isActive_Should_ReturnTrue_WhenTheTimerIsActive)
+TEST(IsActiveTest, isActive_SHOULD_ReturnTrue_WHEN_TheTimerIsActive)
 {
 	Timer testTimer = Timer();
 
@@ -12,7 +12,7 @@ TEST(IsActiveTest, isActive_Should_ReturnTrue_WhenTheTimerIsActive)
 	EXPECT_EQ(expectedState, activeState);
 }
 
-TEST(IsActiveTest, isActive_Should_ReturnFalse_WhenTheTimerStopped)
+TEST(IsActiveTest, isActive_SHOULD_ReturnFalse_WHEN_TheTimerStopped)
 {
 	Timer testTimer = Timer();
 	testTimer.stop();
@@ -23,7 +23,7 @@ TEST(IsActiveTest, isActive_Should_ReturnFalse_WhenTheTimerStopped)
 	EXPECT_EQ(expectedState, activeState);
 }
 
-TEST_F(TimerTestFixture, isActive_Should_ReturnTrue_WhenTheTimerIsActive)
+TEST_F(TimerTestFixture, isActive_SHOULD_ReturnTrue_WHEN_TheTimerIsActive)
 {
 	auto expectedState = true;
 	auto activeState = m_timer.isActive();
@@ -31,7 +31,7 @@ TEST_F(TimerTestFixture, isActive_Should_ReturnTrue_WhenTheTimerIsActive)
 	EXPECT_EQ(expectedState, activeState);
 }
 
-TEST_F(TimerTestFixture, setTimeout_Should_StartTimer_WhithTheCallback1)
+TEST_F(TimerTestFixture, setTimeout_SHOULD_StartTimer_WhithTheCallback1)
 {
 	m_timer.setTimeout([](std::string_view str = "Cookoo!") -> bool {
 		std::cout << "Tick Tock .. After 1s I'll print: " << str
@@ -45,7 +45,7 @@ TEST_F(TimerTestFixture, setTimeout_Should_StartTimer_WhithTheCallback1)
 	EXPECT_EQ(expectedTimerState, timerState);
 }
 
-TEST_F(TimerTestFixture, setTimeout_Should_StartTimer_WhithTheCallback2)
+TEST_F(TimerTestFixture, setTimeout_SHOULD_StartTimer_WhithTheCallback2)
 {
 	m_timer.setTimeout([]() -> bool {
 		std::cout << "Tick Tock .. After 1s I'll just return true value & stop\n";
@@ -58,7 +58,7 @@ TEST_F(TimerTestFixture, setTimeout_Should_StartTimer_WhithTheCallback2)
 	EXPECT_EQ(expectedTimerState, timerState);
 }
 
-TEST_F(TimerTestFixture, setTimeout_Should_StartTimer_WhithTheCallback3)
+TEST_F(TimerTestFixture, setTimeout_SHOULD_StartTimer_WhithTheCallback3)
 {
 	m_timer.setTimeout([]() {
 		std::cout << "Tick Tock .. After 1s I'll do something & stop\n";
@@ -70,7 +70,7 @@ TEST_F(TimerTestFixture, setTimeout_Should_StartTimer_WhithTheCallback3)
 	EXPECT_EQ(expectedTimerState, timerState);
 }
 
-TEST_F(TimerTestFixture, setInterval_Should_NotStopTimer_WhenItsLaunched)
+TEST_F(TimerTestFixture, setInterval_SHOULD_NotStopTimer_WHEN_ItsLaunched)
 {
 	m_timer.setInterval([]() {
 		std::cout << "Tick Tock .. After each 1s ...\n";

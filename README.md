@@ -33,11 +33,11 @@ int main()
 {
     Timer timer = Timer();
 
-    timer.setTimeout([&]() {
+    timer.setTimeout([]() {
         std::cout << "Tick Tock .. After 1s I'll do something & stop\n";
     }, 1s);
 
-    timer.setInterval([&]() {
+    timer.setInterval([]() {
         std::cout << "Tick Tock .. After each 1s ...\n";
     }, 1s);
 
