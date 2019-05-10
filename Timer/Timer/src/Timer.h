@@ -4,7 +4,6 @@
 
 #include <functional>
 #include <chrono>
-#include <future> // async
 #include <future>
 
 template struct TIMER_API std::atomic_bool;

@@ -33,7 +33,7 @@ TEST_F(TimerTestFixture, isActive_Should_ReturnTrue_WhenTheTimerIsActive)
 
 TEST_F(TimerTestFixture, setTimeout_Should_StartTimer_WhithTheCallback1)
 {
-	m_timer.setTimeout([&](std::string_view str = "Cookoo!") -> bool {
+	m_timer.setTimeout([](std::string_view str = "Cookoo!") -> bool {
 		std::cout << "Tick Tock .. After 1s I'll print: " << str
 			<< " & return false value & stop\n";
 		return false;
@@ -47,7 +47,7 @@ TEST_F(TimerTestFixture, setTimeout_Should_StartTimer_WhithTheCallback1)
 
 TEST_F(TimerTestFixture, setTimeout_Should_StartTimer_WhithTheCallback2)
 {
-	m_timer.setTimeout([&]() -> bool {
+	m_timer.setTimeout([]() -> bool {
 		std::cout << "Tick Tock .. After 1s I'll just return true value & stop\n";
 		return true;
 	}, 1s);
@@ -60,7 +60,7 @@ TEST_F(TimerTestFixture, setTimeout_Should_StartTimer_WhithTheCallback2)
 
 TEST_F(TimerTestFixture, setTimeout_Should_StartTimer_WhithTheCallback3)
 {
-	m_timer.setTimeout([&]() {
+	m_timer.setTimeout([]() {
 		std::cout << "Tick Tock .. After 1s I'll do something & stop\n";
 	}, 1s);
 
@@ -72,7 +72,7 @@ TEST_F(TimerTestFixture, setTimeout_Should_StartTimer_WhithTheCallback3)
 
 TEST_F(TimerTestFixture, setInterval_Should_NotStopTimer_WhenItsLaunched)
 {
-	m_timer.setInterval([&]() {
+	m_timer.setInterval([]() {
 		std::cout << "Tick Tock .. After each 1s ...\n";
 	}, 1s);
 
