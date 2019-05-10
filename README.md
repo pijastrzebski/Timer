@@ -7,7 +7,7 @@ Basic C++ timer (windows x64 dynamic library) done in Test-driven development
 
 ```c++
 Timer timer = Timer();
-timer.setTimeout([&](std::string_view str = "Cookoo!") -> bool {
+timer.setTimeout([](std::string_view str = "Cookoo!") -> bool {
     std::cout << "Tick Tock .. After 1s I'll print: " << str
         << " & return false value & stop\n";
     return false;
@@ -18,7 +18,7 @@ timer.setTimeout([&](std::string_view str = "Cookoo!") -> bool {
 
 ```c++
 Timer timer = Timer();
-timer.setInterval([&]() {
+timer.setInterval([]() {
     std::cout << "Tick Tock .. After each 1s ...\n";
 }, 1s);
 ```
